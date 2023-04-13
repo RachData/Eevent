@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'social_django',
+    'rest_framework_simplejwt',
     'myapp',
 ]
 
@@ -47,6 +48,13 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'your-db-name',
     }
+}
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
 AUTHENTICATION_BACKENDS = (
